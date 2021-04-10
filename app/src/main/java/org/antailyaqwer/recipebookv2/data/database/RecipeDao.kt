@@ -1,11 +1,11 @@
-package org.antailyaqwer.recipebookv2.presentation.database
+package org.antailyaqwer.recipebookv2.data.database
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
-import org.antailyaqwer.recipebookv2.data.enteties.Recipe
+import org.antailyaqwer.recipebookv2.domain.enteties.Recipe
 import java.util.*
 
 @Dao
@@ -26,9 +26,11 @@ interface RecipeDao {
     @Query("SELECT * FROM recipe ORDER BY date DESC")
     suspend fun getAllRecipesOrderedByDateDescending(): Flow<List<Recipe>>
 
+    //TODO Решить конфликты
     @Update
     suspend fun updateRecipe(recipe: Recipe)
 
+    //TODO Решить конфликты
     @Insert
     suspend fun insertRecipe(recipe: Recipe)
 

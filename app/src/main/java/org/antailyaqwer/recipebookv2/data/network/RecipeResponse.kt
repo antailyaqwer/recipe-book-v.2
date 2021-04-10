@@ -1,6 +1,6 @@
-package org.antailyaqwer.recipebookv2.presentation.network
+package org.antailyaqwer.recipebookv2.data.network
 
 import com.google.gson.annotations.SerializedName
-import org.antailyaqwer.recipebookv2.data.enteties.Recipe
+import org.antailyaqwer.recipebookv2.domain.enteties.Recipe
 
 data class RecipeResponse(@SerializedName("recipes") var recipes: List<Recipe>)

@@ -1,4 +1,4 @@
-package org.antailyaqwer.recipebookv2.presentation.database
+package org.antailyaqwer.recipebookv2.data.database
 
 import androidx.room.TypeConverter
 import com.google.gson.Gson
@@ -19,7 +19,6 @@ class RecipeTypeConverter {
     fun toDate(date: Long): Date = Date(date)
 
     @TypeConverter
-//    fun fromImages(images: List<String>): String = images.joinToString(",")
     fun fromImages(images: List<String>): String = Gson().toJson(images)
 
     @TypeConverter

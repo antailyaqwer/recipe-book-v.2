@@ -1,4 +1,4 @@
-package org.antailyaqwer.recipebookv2.data.enteties
+package org.antailyaqwer.recipebookv2.domain.enteties
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
