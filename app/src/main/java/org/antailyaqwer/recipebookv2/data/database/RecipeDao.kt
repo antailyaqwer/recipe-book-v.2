@@ -12,19 +12,19 @@ import java.util.*
 interface RecipeDao {
 
     @Query("SELECT * FROM recipe WHERE uuid=:uuid")
-    suspend fun getRecipe(uuid: UUID): Flow<Recipe?>
+    fun getRecipe(uuid: UUID): Flow<Recipe?>
 
     @Query("SELECT * FROM recipe ORDER BY name ASC")
-    suspend fun getAllRecipesOrderedByNameAscending(): Flow<List<Recipe>>
+    fun getAllRecipesOrderedByNameAscending(): Flow<List<Recipe>>
 
     @Query("SELECT * FROM recipe ORDER BY name DESC")
-    suspend fun getAllRecipesOrderedByNameDescending(): Flow<List<Recipe>>
+    fun getAllRecipesOrderedByNameDescending(): Flow<List<Recipe>>
 
     @Query("SELECT * FROM recipe ORDER BY date ASC")
-    suspend fun getAllRecipesOrderedByDateAscending(): Flow<List<Recipe>>
+    fun getAllRecipesOrderedByDateAscending(): Flow<List<Recipe>>
 
     @Query("SELECT * FROM recipe ORDER BY date DESC")
-    suspend fun getAllRecipesOrderedByDateDescending(): Flow<List<Recipe>>
+    fun getAllRecipesOrderedByDateDescending(): Flow<List<Recipe>>
 
     //TODO Решить конфликты
     @Update
@@ -35,5 +35,5 @@ interface RecipeDao {
     suspend fun insertRecipe(recipe: Recipe)
 
     @Query("SELECT * FROM recipe WHERE name LIKE :query OR description LIKE :query OR instructions LIKE :query")
-    suspend fun searchByNameOrDescriptionOrInstructions(query: String): Flow<List<Recipe>>
+    fun searchByNameOrDescriptionOrInstructions(query: String): Flow<List<Recipe>>
 }

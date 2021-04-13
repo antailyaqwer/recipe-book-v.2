@@ -6,11 +6,11 @@ import java.util.*
 
 @Entity
 data class Recipe(
-    @PrimaryKey private val uuid: UUID,
-    private val name: String,
-    private val images: List<String>,
-    private var date: Date,
-    private val description: String,
-    private val instructions: String,
-    private val difficulty: Int
+    @PrimaryKey val uuid: UUID,
+    val name: String,
+    val images: List<String>,
+    var date: Date,
+    val description: String,
+    val instructions: String,
+    val difficulty: Int
 )
