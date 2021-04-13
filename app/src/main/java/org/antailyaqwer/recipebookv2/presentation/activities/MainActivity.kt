@@ -1,4 +1,4 @@
-package org.antailyaqwer.recipebookv2.presentation1.activities
+package org.antailyaqwer.recipebookv2.presentation.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
